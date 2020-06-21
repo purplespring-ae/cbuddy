@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css"
+    />
+    <title>cbuddy - {{ title }}</title>
+  </head>
+  <body>
+    <nav
+      class="navbar is-radiusless has-shadow is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img
+            src="../static/img/psi-white.svg"
+            alt="Counselling Buddy"
+            width="28"
+            height="28"
+          />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Calendar
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Milestones
+              </a>
+              <a class="navbar-item">
+                Supervision
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                New Appointment
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Clients
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Roster
+              </a>
+              <a class="navbar-item">
+                Search
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                New Client
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-light">
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- <section class="section has-background-white"> -->
+    <div class="container has-background-white">
+      <div class="layer">
+        {% block notifications %} {% endblock notifications %}
+      </div>
+    </div>
+    <!-- </section> -->
+    <section class="section has-background-light">
+      <div class="container">
+        <h4 class="title is-5 mt-1 mb-1 pt-1 pb-1">
+          {{ title }}
+        </h4>
+        {% block main %} {% endblock main %}
+      </div>
+    </section>
+    <footer class="is-footer">
+      <hr class="is-marginless is-paddingless" />
+      <div class="content has-text-centered">
+        <p class="is-7 has-text-weight-light">&copy; purplespring 2020</p>
+      </div>
+    </footer>
+  </body>
+</html>
